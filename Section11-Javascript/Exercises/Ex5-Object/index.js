@@ -12,7 +12,19 @@ const userLogin = {
 const database = [
   {
     username: "robinson",
-    password: "password",
+    password: "robinsongarcia",
+  },
+  {
+    username: "kristine",
+    password: "kristinegarcia",
+  },
+  {
+    username: "thor",
+    password: "thorgarcia",
+  },
+  {
+    username: "lexy",
+    password: "lexygarcia",
   },
 ];
 
@@ -36,9 +48,15 @@ const newsFeed = [
 //function declaration
 
 function signIn(username, password) {
-  if (username === database[0].username && password === database[0].password)
-    console.log(newsFeed);
-  else console.log("Invalid login, try again!");
+  for (let i = 0; i < database.length; i++) {
+    if (
+      username === database[i].username &&
+      password === database[i].password
+    ) {
+      return newsFeed;
+    }
+  }
+  return "invalid login";
 }
 
-signIn("meow", "password");
+console.log(signIn("robinson", "robinsongarcia"));
